@@ -57,65 +57,87 @@ export default function Services() {
           {/* What I Can Do */}
           <motion.div
             variants={itemVariants}
-            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+            className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 overflow-hidden"
           >
-            <h3 className="text-2xl font-bold mb-4">What I can do</h3>
-            <p className="text-gray-400 mb-6">
-              I can help develop solutions that will help you grow your
-              business:
-            </p>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Fullstack Web Development</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Mobile App Development (React Native)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>API Design & Integration</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Database Design & Management</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Real-time Communication (Socket.io)</span>
-              </li>
-            </ul>
+            {/* Swirl Pattern Background on Hover */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              style={{
+                backgroundImage: `url('/swirl.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4">What I can do</h3>
+              <p className="text-gray-400 mb-6">
+                I can help develop solutions that will help you grow your
+                business:
+              </p>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Fullstack Web Development</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Mobile App Development (React Native)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>API Design & Integration</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Database Design & Management</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Real-time Communication (Socket.io)</span>
+                </li>
+              </ul>
+            </div>
           </motion.div>
 
           {/* Tools I Use */}
           <motion.div
             variants={itemVariants}
-            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+            className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 overflow-hidden"
           >
-            <h3 className="text-2xl font-bold mb-4">Tools I Use</h3>
-            <p className="text-gray-400 mb-6">
-              I use the latest tools and technologies to build functional and
-              scalable products:
-            </p>
-            <div className="space-y-4">
-              <div>
-                <p className="text-sm text-gray-500 mb-2">• Frontend</p>
-                <p className="text-gray-300">
-                  React, Next.js, React Native, TypeScript
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500 mb-2">• Backend</p>
-                <p className="text-gray-300">
-                  NestJS, Spring Boot, MongoDB, PostgreSQL
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-gray-500 mb-2">• DevOps & Tools</p>
-                <p className="text-gray-300">
-                  Docker, Git/GitHub, Tailwind CSS, Socket.io
-                </p>
+            {/* Swirl Pattern Background on Hover */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              style={{
+                backgroundImage: `url('/swirl.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4">Tools I Use</h3>
+              <p className="text-gray-400 mb-6">
+                I use the latest tools and technologies to build functional and
+                scalable products:
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-sm text-gray-500 mb-2">• Frontend</p>
+                  <p className="text-gray-300">
+                    React, Next.js, React Native, TypeScript
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-2">• Backend</p>
+                  <p className="text-gray-300">
+                    NestJS, Spring Boot, MongoDB, PostgreSQL
+                  </p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-2">• DevOps & Tools</p>
+                  <p className="text-gray-300">
+                    Docker, Git/GitHub, Tailwind CSS, Socket.io
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -123,31 +145,42 @@ export default function Services() {
           {/* UI/UX Design */}
           <motion.div
             variants={itemVariants}
-            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+            className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 overflow-hidden"
           >
-            <h3 className="text-2xl font-bold mb-4">UI/UX Design</h3>
-            <p className="text-gray-400 mb-6">
-              I am a designer first, developer second. I can help design clean
-              and modern interfaces:
-            </p>
-            <ul className="space-y-3 text-gray-300">
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>User-Centered Design</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Modern & Clean UI</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Responsive Layouts</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-gray-400">•</span>
-                <span>Wireframes & Prototypes</span>
-              </li>
-            </ul>
+            {/* Swirl Pattern Background on Hover */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+              style={{
+                backgroundImage: `url('/swirl.png')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4">UI/UX Design</h3>
+              <p className="text-gray-400 mb-6">
+                I am a designer first, developer second. I can help design clean
+                and modern interfaces:
+              </p>
+              <ul className="space-y-3 text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>User-Centered Design</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Modern & Clean UI</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Responsive Layouts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-400">•</span>
+                  <span>Wireframes & Prototypes</span>
+                </li>
+              </ul>
+            </div>
           </motion.div>
         </motion.div>
       </div>
