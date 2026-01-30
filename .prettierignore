@@ -1,0 +1,16 @@
+# Ignore CSS files
+*.css
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Other
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
