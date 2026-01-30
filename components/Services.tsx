@@ -1,18 +1,64 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Services() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <section className="py-20 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
           Building Digital Experiences
-        </h2>
-        <p className="text-gray-400 mb-12 max-w-2xl">
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-gray-400 mb-12 max-w-2xl"
+        >
           I specialize in creating stunning user interfaces and developing
           high-quality applications that stand out.
-        </p>
+        </motion.p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-6"
+        >
           {/* What I Can Do */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition">
+          <motion.div
+            variants={itemVariants}
+            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+          >
             <h3 className="text-2xl font-bold mb-4">What I can do</h3>
             <p className="text-gray-400 mb-6">
               I can help develop solutions that will help you grow your
@@ -40,10 +86,13 @@ export default function Services() {
                 <span>Real-time Communication (Socket.io)</span>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Tools I Use */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition">
+          <motion.div
+            variants={itemVariants}
+            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+          >
             <h3 className="text-2xl font-bold mb-4">Tools I Use</h3>
             <p className="text-gray-400 mb-6">
               I use the latest tools and technologies to build functional and
@@ -69,10 +118,13 @@ export default function Services() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* UI/UX Design */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition">
+          <motion.div
+            variants={itemVariants}
+            className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
+          >
             <h3 className="text-2xl font-bold mb-4">UI/UX Design</h3>
             <p className="text-gray-400 mb-6">
               I am a designer first, developer second. I can help design clean
@@ -96,8 +148,8 @@ export default function Services() {
                 <span>Wireframes & Prototypes</span>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

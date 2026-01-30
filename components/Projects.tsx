@@ -1,8 +1,39 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Projects() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section id="projects" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-between items-center mb-12"
+        >
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Featured Projects
@@ -14,11 +45,20 @@ export default function Projects() {
           <button className="hidden md:flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition border border-white/10">
             View All Projects
           </button>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {/* StudentMap */}
-          <div className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
+          <motion.div
+            variants={itemVariants}
+            className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition"
+          >
             <div className="aspect-video bg-gradient-to-br from-gray-800/50 to-gray-700/50 flex items-center justify-center"></div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">StudentMap</h3>
@@ -46,10 +86,13 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* VibeTalk */}
-          <div className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
+          <motion.div
+            variants={itemVariants}
+            className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition"
+          >
             <div className="aspect-video bg-gradient-to-br from-gray-700/50 to-gray-800/50 flex items-center justify-center"></div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">VibeTalk</h3>
@@ -80,10 +123,13 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Fanorona */}
-          <div className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition">
+          <motion.div
+            variants={itemVariants}
+            className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition"
+          >
             <div className="aspect-video bg-gradient-to-br from-slate-800/50 to-gray-800/50 flex items-center justify-center"></div>
             <div className="p-6">
               <h3 className="text-xl font-bold mb-2">Fanorona Game</h3>
@@ -108,8 +154,8 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

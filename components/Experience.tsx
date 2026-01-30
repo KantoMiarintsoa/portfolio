@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
 export default function Experience() {
   const experiences = [
     {
@@ -23,18 +27,60 @@ export default function Experience() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <section className="py-20 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">Experience</h2>
-        <p className="text-gray-400 mb-12 max-w-2xl">
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
+          Experience
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-gray-400 mb-12 max-w-2xl"
+        >
           My professional journey and key milestones
-        </p>
+        </motion.p>
 
-        <div className="space-y-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
           {experiences.map((exp, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={itemVariants}
               className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
@@ -47,9 +93,9 @@ export default function Experience() {
                 </span>
               </div>
               <p className="text-gray-400">{exp.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
