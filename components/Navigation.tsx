@@ -3,17 +3,17 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <span className="text-purple-500">◈</span>
+          <span className="text-gray-400">◈</span>
           <span className="font-semibold">Kanto Sarobidy</span>
         </div>
         <div className="hidden md:flex gap-8 text-sm">
-          <a href="#home" className="hover:text-purple-400 transition">
+          <a href="#home" className="hover:text-white transition">
             Home
           </a>
-          <a href="#projects" className="hover:text-purple-400 transition">
+          <a href="#projects" className="hover:text-white transition">
             Projects
           </a>
-          <a href="#contact" className="hover:text-purple-400 transition">
+          <a href="#contact" className="hover:text-white transition">
             Contact
           </a>
         </div>

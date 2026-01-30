@@ -24,7 +24,7 @@ export default function Experience() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-black to-purple-950/20">
+    <section className="py-20 px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Experience</h2>
         <p className="text-gray-400 mb-12 max-w-2xl">
@@ -40,7 +40,7 @@ export default function Experience() {
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                 <div>
                   <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                  <p className="text-purple-400 font-medium">{exp.company}</p>
+                  <p className="text-gray-400 font-medium">{exp.company}</p>
                 </div>
                 <span className="text-gray-400 text-sm md:text-base">
                   {exp.period}
