@@ -1,8 +1,52 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { sendEmail, type ContactFormData } from '@/app/actions/sendEmail';
 
 export default function Contact() {
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setStatus({ type: null, message: '' });
+
+    const result = await sendEmail(formData);
+
+    if (result.success) {
+      setStatus({
+        type: 'success',
+        message: result.message || 'Message sent successfully!',
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setStatus({
+        type: 'error',
+        message: result.error || 'Something went wrong. Please try again.',
+      });
+    }
+
+    setIsLoading(false);
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
   return (
     <section id="contact" className="py-20 px-6 relative overflow-hidden">
       {/* Animated Wave Background */}
@@ -117,15 +161,34 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
           >
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {status.type && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-lg ${
+                    status.type === 'success'
+                      ? 'bg-green-500/10 border border-green-500/20 text-green-400'
+                      : 'bg-red-500/10 border border-red-500/20 text-red-400'
+                  }`}
+                >
+                  {status.message}
+                </motion.div>
+              )}
+
               <div>
                 <label className="block text-sm font-medium mb-2 text-gray-300">
                   Name
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  disabled={isLoading}
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition text-white placeholder:text-gray-500"
+                  className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
               <div>
@@ -134,8 +197,13 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  disabled={isLoading}
                   placeholder="contact@example.com"
-                  className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition text-white placeholder:text-gray-500"
+                  className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
               <div>
@@ -143,16 +211,48 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  disabled={isLoading}
                   rows={5}
                   placeholder="Your message here..."
-                  className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition resize-none text-white placeholder:text-gray-500"
+                  className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition resize-none text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-white text-black hover:bg-gray-200 rounded-lg font-semibold transition"
+                disabled={isLoading}
+                className="w-full py-3 bg-white text-black hover:bg-gray-200 rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Send
+                {isLoading ? (
+                  <>
+                    <svg
+                      className="animate-spin h-5 w-5"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </motion.div>
