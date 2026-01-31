@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import LightRays from './ui/LightRays';
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('');
@@ -48,7 +49,7 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-800/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/5 via-transparent to-gray-800/5 z-0" />
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
