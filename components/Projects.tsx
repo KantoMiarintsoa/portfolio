@@ -79,7 +79,9 @@ export default function Projects() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://github.com/KantoMiarintsoa/studentmap-mobile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 text-center py-2 bg-white/5 hover:bg-white/10 rounded-lg transition text-sm"
                 >
                   GitHub
@@ -116,7 +118,9 @@ export default function Projects() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://github.com/KantoMiarintsoa/chat-app-front"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 text-center py-2 bg-white/5 hover:bg-white/10 rounded-lg transition text-sm"
                 >
                   GitHub
@@ -147,7 +151,9 @@ export default function Projects() {
               </div>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://github.com/KantoMiarintsoa/fanorona-mobile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 text-center py-2 bg-white/5 hover:bg-white/10 rounded-lg transition text-sm"
                 >
                   GitHub
