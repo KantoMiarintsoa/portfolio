@@ -6,10 +6,12 @@ import Experience from '@/components/Experience';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LightRays from '@/components/ui/LightRays';
+import ScrollBackground from '@/components/ui/ScrollBackground';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
+      <ScrollBackground />
       <div className="relative">
         <div className="absolute w-full h-full top-0 left-0 pointer-events-none z-10000">
           {/* Light Rays Background Animation */}
