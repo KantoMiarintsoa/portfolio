@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 export default function Experience() {
   const experiences = [
@@ -27,26 +28,13 @@ export default function Experience() {
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start center', 'end center'],
+  });
 
-  const itemVariants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
   return (
     <section className="py-20 px-6 bg-black">
@@ -70,32 +58,80 @@ export default function Experience() {
           My professional journey and key milestones
         </motion.p>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-8"
-        >
-          {experiences.map((exp, i) => (
+        <div ref={containerRef} className="relative">
+          {/* Animated Timeline Line */}
+          <div className="absolute left-[19px] md:left-8 top-0 bottom-0 w-[2px] bg-white/10">
             <motion.div
-              key={i}
-              variants={itemVariants}
-              className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                  <p className="text-gray-400 font-medium">{exp.company}</p>
+              style={{ height: lineHeight }}
+              className="w-full bg-white"
+            />
+          </div>
+
+          {/* Timeline Items */}
+          <div className="space-y-12">
+            {experiences.map((exp, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                className="relative pl-12 md:pl-20"
+              >
+                {/* Timeline Dot */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.2 + 0.3 }}
+                  className="absolute left-[11px] md:left-[23px] top-2 w-5 h-5 rounded-full bg-white border-4 border-black"
+                />
+
+                {/* Content */}
+                <div className="pb-8">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.2 + 0.4 }}
+                    className="mb-2"
+                  >
+                    <span className="inline-block px-3 py-1 bg-white/10 text-gray-300 rounded-full text-sm mb-3">
+                      {exp.period}
+                    </span>
+                  </motion.div>
+                  <motion.h3
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.2 + 0.5 }}
+                    className="text-2xl md:text-3xl font-bold mb-2"
+                  >
+                    {exp.role}
+                  </motion.h3>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.2 + 0.6 }}
+                    className="text-gray-400 font-medium mb-3 text-lg"
+                  >
+                    {exp.company}
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.2 + 0.7 }}
+                    className="text-gray-400 leading-relaxed"
+                  >
+                    {exp.description}
+                  </motion.p>
                 </div>
-                <span className="text-gray-400 text-sm md:text-base">
-                  {exp.period}
-                </span>
-              </div>
-              <p className="text-gray-400">{exp.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
