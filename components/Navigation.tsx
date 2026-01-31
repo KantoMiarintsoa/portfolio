@@ -17,7 +17,7 @@ export default function Navigation() {
             Contact
           </a>
         </div>
-        <button className="p-2 rounded-lg hover:bg-white/10 transition">
+        {/* <button className="p-2 rounded-lg hover:bg-white/10 transition">
           <svg
             className="w-5 h-5"
             fill="none"
@@ -31,7 +31,7 @@ export default function Navigation() {
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>
-        </button>
+        </button> */}
       </div>
     </nav>
   );
