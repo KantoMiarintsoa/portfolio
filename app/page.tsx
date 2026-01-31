@@ -20,7 +20,7 @@ export default function Home() {
             raysColor="#ffffff"
             raysSpeed={0.8}
             lightSpread={3}
-            rayLength={3}
+            rayLength={1}
             pulsating={true}
             fadeDistance={0.5}
             saturation={1.0}
