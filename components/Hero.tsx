@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import LightRays from './ui/LightRays';
 
 export default function Hero() {
@@ -58,7 +59,14 @@ export default function Hero() {
           className="mb-8 flex justify-center"
         >
           <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gray-700 to-gray-600 p-1">
-            <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-6xl"></div>
+            <div className="w-full h-full rounded-full bg-black overflow-hidden relative">
+              <Image
+                src="/images/profile.jpeg"
+                alt="Kanto Sarobidy Ratolojanahary"
+                fill
+                className="object-cover grayscale"
+              />
+            </div>
           </div>
         </motion.div>
         <motion.h1
