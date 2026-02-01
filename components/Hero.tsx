@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import LightRays from './ui/LightRays';
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('');

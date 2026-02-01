@@ -1,0 +1,106 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Salut, je suis",
+    "name": "Kanto Sarobidy",
+    "roles": {
+      "fullstack": "Développeur Fullstack",
+      "mobile": "Développeur Mobile",
+      "web": "Développeur Web",
+      "software": "Ingénieur Logiciel"
+    },
+    "description": "Développeur fullstack professionnel spécialisé dans la création d'applications web et mobiles modernes. Développeur organisé, autonome, entrepreneurial et engagé, passionné par la création d'expériences utilisateur fluides avec des technologies de pointe.",
+    "cta": "Engagez-moi"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Ce que je peux faire pour vous",
+    "web": {
+      "title": "Développement Web",
+      "description": "Applications web modernes et réactives avec React, Next.js et des technologies de pointe."
+    },
+    "mobile": {
+      "title": "Développement Mobile",
+      "description": "Applications mobiles multiplateformes avec React Native pour iOS et Android."
+    },
+    "backend": {
+      "title": "Développement Backend",
+      "description": "APIs REST robustes et évolutives avec NestJS, Node.js et gestion de bases de données."
+    },
+    "ui": {
+      "title": "Design UI/UX",
+      "description": "Interfaces utilisateur intuitives et élégantes avec attention aux détails et à l'expérience utilisateur."
+    }
+  },
+  "projects": {
+    "title": "Projets en vedette",
+    "subtitle": "Quelques-uns de mes travaux récents dont je suis fier",
+    "viewAll": "Voir tous les projets",
+    "github": "GitHub",
+    "studentmap": {
+      "title": "StudentMap",
+      "description": "Application mobile pour les étudiants pour localiser et consulter les points d'intérêt universitaires (bâtiments, messagerie, etc.).",
+      "fullDescription": "StudentMap est une application mobile complète conçue pour aider les étudiants universitaires à naviguer dans la vie sur le campus. L'application fournit une carte interactive montrant tous les emplacements importants, y compris les bâtiments, les cafétérias, les bibliothèques et les espaces d'étude. Les étudiants peuvent également utiliser le système de messagerie intégré pour communiquer avec leurs pairs et obtenir des mises à jour en temps réel sur les événements et activités du campus."
+    },
+    "vibetalk": {
+      "title": "VibeTalk",
+      "description": "Application de messagerie web moderne et réactive avec communication en temps réel.",
+      "fullDescription": "VibeTalk est une plateforme de messagerie web de pointe qui permet la communication en temps réel entre les utilisateurs. Construit avec des technologies modernes, il offre une livraison instantanée des messages, des indicateurs de présence des utilisateurs, des indicateurs de saisie et une interface utilisateur élégante. L'application utilise la technologie WebSocket via Socket.io pour assurer une livraison de messages rapide et fiable."
+    },
+    "fanorona": {
+      "title": "Jeu Fanorona",
+      "description": "Version mobile du jeu de stratégie traditionnel malgache avec interface intuitive et logique de jeu.",
+      "fullDescription": "Fanorona est un jeu de plateau de stratégie traditionnel malgache qui se joue depuis des siècles. Cette implémentation mobile apporte le jeu classique sur les appareils modernes avec une interface tactile intuitive, des adversaires IA intelligents et un système de tutoriel pour les nouveaux joueurs. Le jeu propose des règles et des mécanismes de jeu authentiques tout en offrant une expérience de jeu mobile fluide."
+    },
+    "technologies": "Technologies",
+    "viewOnGithub": "Voir sur GitHub"
+  },
+  "experience": {
+    "title": "Expérience",
+    "subtitle": "Mon parcours professionnel et étapes clés",
+    "freelance": {
+      "role": "Développeur Fullstack",
+      "company": "Vowen (Freelance)",
+      "period": "Septembre 2025 - Présent",
+      "description": "Développement d'applications web fullstack. Frontend avec Next.js (React), Backend avec NestJS (API REST). Intégration d'API, gestion des données et logique métier. Collaboration avec les équipes de designers et de produits."
+    },
+    "intern": {
+      "role": "Stagiaire Développeur Fullstack",
+      "company": "HasinReziga",
+      "period": "Juillet - Septembre 2024",
+      "description": "Développement d'une plateforme de bibliothèque en ligne. Création d'API REST avec Spring Boot pour la gestion des utilisateurs, des livres et des prêts. Développement d'interface utilisateur réactive avec React. Mise en œuvre de la communication entre frontend et backend via des appels API. Déployé avec Docker."
+    },
+    "student": {
+      "role": "Étudiant",
+      "company": "Université Adventiste Zurcher",
+      "period": "Novembre 2022 - Juin 2025",
+      "description": "Licence en informatique, génie logiciel et systèmes d'information. Apprentissage du développement logiciel, de la conception de bases de données, des algorithmes et des technologies web modernes."
+    }
+  },
+  "contact": {
+    "title": "Donnez vie à vos idées.",
+    "subtitle": "Transformons votre vision en réalité",
+    "description": "Vous avez un projet en tête ou vous voulez simplement discuter ? Connectons-nous !",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "contact@exemple.com",
+      "message": "Message",
+      "messagePlaceholder": "Votre message ici...",
+      "send": "Envoyer le message",
+      "sending": "Envoi...",
+      "success": "Message envoyé avec succès !",
+      "error": "Quelque chose s'est mal passé. Veuillez réessayer."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "name": "Kanto Sarobidy",
+    "roles": {
+      "fullstack": "A Fullstack Developer",
+      "mobile": "A Mobile Developer",
+      "web": "A Web Developer",
+      "software": "A Software Engineer"
+    },
+    "description": "Professional fullstack developer specialized in building modern web and mobile applications. Organized, autonomous, entrepreneurial, and engaged developer passionate about crafting seamless user experiences with cutting-edge technologies.",
+    "cta": "Hire Me"
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I can do for you",
+    "web": {
+      "title": "Web Development",
+      "description": "Modern and responsive web applications with React, Next.js, and cutting-edge technologies."
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "description": "Cross-platform mobile applications with React Native for iOS and Android."
+    },
+    "backend": {
+      "title": "Backend Development",
+      "description": "Robust and scalable REST APIs with NestJS, Node.js, and database management."
+    },
+    "ui": {
+      "title": "UI/UX Design",
+      "description": "Intuitive and elegant user interfaces with attention to detail and user experience."
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Some of my recent work that I'm proud of",
+    "viewAll": "View All Projects",
+    "github": "GitHub",
+    "studentmap": {
+      "title": "StudentMap",
+      "description": "Mobile app for students to locate and consult university points of interest (buildings, messaging, etc.).",
+      "fullDescription": "StudentMap is a comprehensive mobile application designed to help university students navigate campus life. The app provides an interactive map showing all important locations including buildings, cafeterias, libraries, and study areas. Students can also use the integrated messaging system to communicate with peers and get real-time updates about campus events and activities."
+    },
+    "vibetalk": {
+      "title": "VibeTalk",
+      "description": "Modern and reactive web messaging application with real-time communication.",
+      "fullDescription": "VibeTalk is a cutting-edge web messaging platform that enables real-time communication between users. Built with modern technologies, it offers instant message delivery, user presence indicators, typing indicators, and a sleek user interface. The application uses WebSocket technology through Socket.io to ensure fast and reliable message delivery."
+    },
+    "fanorona": {
+      "title": "Fanorona Game",
+      "description": "Mobile version of the traditional Malagasy strategy game with intuitive interface and game logic.",
+      "fullDescription": "Fanorona is a traditional Malagasy strategy board game that has been played for centuries. This mobile implementation brings the classic game to modern devices with an intuitive touch interface, smart AI opponents, and a tutorial system for new players. The game features authentic rules and gameplay mechanics while providing a smooth mobile gaming experience."
+    },
+    "technologies": "Technologies",
+    "viewOnGithub": "View on GitHub"
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey and key milestones",
+    "freelance": {
+      "role": "Fullstack Developer",
+      "company": "Vowen (Freelance)",
+      "period": "September 2025 - Present",
+      "description": "Development of fullstack web applications. Frontend with Next.js (React), Backend with NestJS (REST API). API integration, data management and business logic. Collaboration with designers and product teams."
+    },
+    "intern": {
+      "role": "Fullstack Developer Intern",
+      "company": "HasinReziga",
+      "period": "July - September 2024",
+      "description": "Development of an online library platform. Created REST API with Spring Boot for managing users, books, and loans. Developed reactive user interface with React. Implemented communication between frontend and backend via API calls. Deployed with Docker."
+    },
+    "student": {
+      "role": "Student",
+      "company": "Université Adventiste Zurcher",
+      "period": "November 2022 - June 2025",
+      "description": "Bachelor's degree in Computer Science, Software Engineering and Information Systems. Learning software development, database design, algorithms, and modern web technologies."
+    }
+  },
+  "contact": {
+    "title": "Bringing your ideas to life.",
+    "subtitle": "Let's turn your vision into reality",
+    "description": "Have a project in mind or just want to chat? Let's connect!",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "contact@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message here...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
