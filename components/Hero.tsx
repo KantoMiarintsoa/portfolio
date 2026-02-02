@@ -3,17 +3,19 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('hero');
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   const roles = [
-    'A Fullstack Developer',
-    'A Mobile Developer',
-    'A Web Developer',
-    'A Software Engineer',
+    t('roles.fullstack'),
+    t('roles.backend'),
+    t('roles.web'),
+    t('roles.software'),
   ];
 
   useEffect(() => {
@@ -74,7 +76,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold mb-4"
         >
-          Hey, I&apos;m <span className="text-white">Kanto Sarobidy</span>
+          {t('greeting')} <span className="text-white">{t('name')}</span>
         </motion.h1>
         <motion.h2
           initial={{ y: -30, opacity: 0 }}
@@ -93,10 +95,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-gray-400 max-w-2xl mx-auto mb-8 text-lg"
         >
-          Professional fullstack developer specialized in building modern web
-          and mobile applications. Organized, autonomous, entrepreneurial, and
-          engaged developer passionate about crafting seamless user experiences
-          with cutting-edge technologies.
+          {t('description')}
         </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -105,7 +104,7 @@ export default function Hero() {
           className="flex justify-center mt-4"
         >
           <button className="px-12 py-5 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 rounded-lg transition flex items-center gap-3 font-semibold text-xl">
-            Hire Me
+            {t('cta')}
           </button>
         </motion.div>
       </div>

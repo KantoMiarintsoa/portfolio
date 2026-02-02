@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface Project {
   title: string;
@@ -15,35 +16,30 @@ interface Project {
 }
 
 export default function Projects() {
+  const t = useTranslations('projects');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
     {
-      title: 'StudentMap',
-      description:
-        'Mobile app for students to locate and consult university points of interest (buildings, messaging, etc.).',
-      fullDescription:
-        'StudentMap is a comprehensive mobile application designed to help university students navigate campus life. The app provides an interactive map showing all important locations including buildings, cafeterias, libraries, and study areas. Students can also use the integrated messaging system to communicate with peers and get real-time updates about campus events and activities.',
+      title: t('studentmap.title'),
+      description: t('studentmap.description'),
+      fullDescription: t('studentmap.fullDescription'),
       image: '/images/studentmap.png',
       technologies: ['React Native', 'Next.js', 'NestJS'],
       github: 'https://github.com/KantoMiarintsoa/studentmap-mobile',
     },
     {
-      title: 'VibeTalk',
-      description:
-        'Modern and reactive web messaging application with real-time communication.',
-      fullDescription:
-        'VibeTalk is a cutting-edge web messaging platform that enables real-time communication between users. Built with modern technologies, it offers instant message delivery, user presence indicators, typing indicators, and a sleek user interface. The application uses WebSocket technology through Socket.io to ensure fast and reliable message delivery.',
+      title: t('vibetalk.title'),
+      description: t('vibetalk.description'),
+      fullDescription: t('vibetalk.fullDescription'),
       image: '/images/vibetalk.png',
       technologies: ['Next.js', 'NestJS', 'Socket.io', 'Tailwind'],
       github: 'https://github.com/KantoMiarintsoa/chat-app-front',
     },
     {
-      title: 'Fanorona Game',
-      description:
-        'Mobile version of the traditional Malagasy strategy game with intuitive interface and game logic.',
-      fullDescription:
-        'Fanorona is a traditional Malagasy strategy board game that has been played for centuries. This mobile implementation brings the classic game to modern devices with an intuitive touch interface, smart AI opponents, and a tutorial system for new players. The game features authentic rules and gameplay mechanics while providing a smooth mobile gaming experience.',
+      title: t('fanorona.title'),
+      description: t('fanorona.description'),
+      fullDescription: t('fanorona.fullDescription'),
       image: '/images/fanorona.png',
       technologies: ['React Native', 'TypeScript'],
       github: 'https://github.com/KantoMiarintsoa/fanorona-mobile',
@@ -83,14 +79,12 @@ export default function Projects() {
         >
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Featured Projects
+              {t('title')}
             </h2>
-            <p className="text-gray-400">
-              Some of my recent work that I&apos;m proud of
-            </p>
+            <p className="text-gray-400">{t('subtitle')}</p>
           </div>
           <button className="hidden md:flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 rounded-lg transition border border-white/10">
-            View All Projects
+            {t('viewAll')}
           </button>
         </motion.div>
 
@@ -139,7 +133,7 @@ export default function Projects() {
                     onClick={(e) => e.stopPropagation()}
                     className="flex-1 text-center py-2 bg-white/5 hover:bg-white/10 rounded-lg transition text-sm"
                   >
-                    GitHub
+                    {t('github')}
                   </a>
                 </div>
               </div>
@@ -207,7 +201,9 @@ export default function Projects() {
 
                 {/* Technologies */}
                 <div className="mb-6">
-                  <h3 className="text-lg font-semibold mb-3">Technologies</h3>
+                  <h3 className="text-lg font-semibold mb-3">
+                    {t('technologies')}
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, i) => (
                       <span
@@ -228,7 +224,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="flex-1 text-center py-3 bg-white/5 hover:bg-white/10 rounded-lg transition font-medium"
                   >
-                    View on GitHub
+                    {t('viewOnGithub')}
                   </a>
                 </div>
               </div>

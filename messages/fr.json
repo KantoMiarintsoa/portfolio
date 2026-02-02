@@ -10,12 +10,12 @@
     "greeting": "Salut, je suis",
     "name": "Kanto Sarobidy",
     "roles": {
-      "fullstack": "Développeur Fullstack",
-      "mobile": "Développeur Mobile",
-      "web": "Développeur Web",
-      "software": "Ingénieur Logiciel"
+      "fullstack": "Développeuse Fullstack",
+      "backend": "Développeuse Backend",
+      "web": "Développeuse Web",
+      "software": "Ingénieure Logiciel"
     },
-    "description": "Développeur fullstack professionnel spécialisé dans la création d'applications web et mobiles modernes. Développeur organisé, autonome, entrepreneurial et engagé, passionné par la création d'expériences utilisateur fluides avec des technologies de pointe.",
+    "description": "Développeuse fullstack professionnelle spécialisée dans la création d'applications web et mobiles modernes. Développeuse organisée, autonome, entrepreneuriale et engagée, passionnée par la création d'expériences utilisateur fluides avec des technologies de pointe.",
     "cta": "Engagez-moi"
   },
   "services": {
@@ -25,22 +25,18 @@
       "title": "Développement Web",
       "description": "Applications web modernes et réactives avec React, Next.js et des technologies de pointe."
     },
-    "mobile": {
-      "title": "Développement Mobile",
-      "description": "Applications mobiles multiplateformes avec React Native pour iOS et Android."
+    "database": {
+      "title": "Solutions de Bases de Données",
+      "description": "Conception, optimisation et gestion de bases de données avec PostgreSQL, MongoDB et MySQL."
     },
     "backend": {
       "title": "Développement Backend",
       "description": "APIs REST robustes et évolutives avec NestJS, Node.js et gestion de bases de données."
-    },
-    "ui": {
-      "title": "Design UI/UX",
-      "description": "Interfaces utilisateur intuitives et élégantes avec attention aux détails et à l'expérience utilisateur."
     }
   },
   "projects": {
     "title": "Projets en vedette",
-    "subtitle": "Quelques-uns de mes travaux récents dont je suis fier",
+    "subtitle": "Quelques-uns de mes travaux récents dont je suis fière",
     "viewAll": "Voir tous les projets",
     "github": "GitHub",
     "studentmap": {
@@ -65,19 +61,19 @@
     "title": "Expérience",
     "subtitle": "Mon parcours professionnel et étapes clés",
     "freelance": {
-      "role": "Développeur Fullstack",
+      "role": "Développeuse Fullstack",
       "company": "Vowen (Freelance)",
       "period": "Septembre 2025 - Présent",
       "description": "Développement d'applications web fullstack. Frontend avec Next.js (React), Backend avec NestJS (API REST). Intégration d'API, gestion des données et logique métier. Collaboration avec les équipes de designers et de produits."
     },
     "intern": {
-      "role": "Stagiaire Développeur Fullstack",
+      "role": "Stagiaire Développeuse Fullstack",
       "company": "HasinReziga",
       "period": "Juillet - Septembre 2024",
       "description": "Développement d'une plateforme de bibliothèque en ligne. Création d'API REST avec Spring Boot pour la gestion des utilisateurs, des livres et des prêts. Développement d'interface utilisateur réactive avec React. Mise en œuvre de la communication entre frontend et backend via des appels API. Déployé avec Docker."
     },
     "student": {
-      "role": "Étudiant",
+      "role": "Étudiante",
       "company": "Université Adventiste Zurcher",
       "period": "Novembre 2022 - Juin 2025",
       "description": "Licence en informatique, génie logiciel et systèmes d'information. Apprentissage du développement logiciel, de la conception de bases de données, des algorithmes et des technologies web modernes."

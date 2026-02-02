@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { sendEmail, type ContactFormData } from '@/app/actions/sendEmail';
+import { useTranslations } from 'next-intl';
 
 export default function Contact() {
+  const t = useTranslations('contact');
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -26,13 +28,13 @@ export default function Contact() {
     if (result.success) {
       setStatus({
         type: 'success',
-        message: result.message || 'Message sent successfully!',
+        message: result.message || t('form.success'),
       });
       setFormData({ name: '', email: '', message: '' });
     } else {
       setStatus({
         type: 'error',
-        message: result.error || 'Something went wrong. Please try again.',
+        message: result.error || t('form.error'),
       });
     }
 
@@ -142,15 +144,13 @@ export default function Contact() {
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-4">
               <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
-                Bringing your ideas to life.
+                {t('title')}
               </span>
             </h2>
             <h3 className="text-3xl md:text-5xl font-bold text-purple-300 mb-6">
-              Let&apos;s turn your vision into reality
+              {t('subtitle')}
             </h3>
-            <p className="text-gray-400 text-lg">
-              Have a project in mind or just want to chat? Let&apos;s connect!
-            </p>
+            <p className="text-gray-400 text-lg">{t('description')}</p>
           </motion.div>
 
           {/* Right Side - Contact Form */}
@@ -178,7 +178,7 @@ export default function Contact() {
 
               <div>
                 <label className="block text-sm font-medium mb-2 text-gray-300">
-                  Name
+                  {t('form.name')}
                 </label>
                 <input
                   type="text"
@@ -187,13 +187,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   disabled={isLoading}
-                  placeholder="Your Name"
+                  placeholder={t('form.namePlaceholder')}
                   className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2 text-gray-300">
-                  Email
+                  {t('form.email')}
                 </label>
                 <input
                   type="email"
@@ -202,13 +202,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   disabled={isLoading}
-                  placeholder="contact@example.com"
+                  placeholder={t('form.emailPlaceholder')}
                   className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2 text-gray-300">
-                  Message
+                  {t('form.message')}
                 </label>
                 <textarea
                   name="message"
@@ -217,7 +217,7 @@ export default function Contact() {
                   required
                   disabled={isLoading}
                   rows={5}
-                  placeholder="Your message here..."
+                  placeholder={t('form.messagePlaceholder')}
                   className="w-full px-4 py-3 bg-black/50 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 transition resize-none text-white placeholder:text-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
@@ -248,10 +248,10 @@ export default function Contact() {
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
                     </svg>
-                    Sending...
+                    {t('form.sending')}
                   </>
                 ) : (
-                  'Send Message'
+                  t('form.send')
                 )}
               </button>
             </form>

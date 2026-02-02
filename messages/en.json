@@ -11,7 +11,7 @@
     "name": "Kanto Sarobidy",
     "roles": {
       "fullstack": "A Fullstack Developer",
-      "mobile": "A Mobile Developer",
+      "backend": "A Backend Developer",
       "web": "A Web Developer",
       "software": "A Software Engineer"
     },
@@ -25,17 +25,13 @@
       "title": "Web Development",
       "description": "Modern and responsive web applications with React, Next.js, and cutting-edge technologies."
     },
-    "mobile": {
-      "title": "Mobile Development",
-      "description": "Cross-platform mobile applications with React Native for iOS and Android."
+    "database": {
+      "title": "Database Solutions",
+      "description": "Database design, optimization, and management with PostgreSQL, MongoDB, and MySQL."
     },
     "backend": {
       "title": "Backend Development",
       "description": "Robust and scalable REST APIs with NestJS, Node.js, and database management."
-    },
-    "ui": {
-      "title": "UI/UX Design",
-      "description": "Intuitive and elegant user interfaces with attention to detail and user experience."
     }
   },
   "projects": {

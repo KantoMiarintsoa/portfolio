@@ -9,7 +9,6 @@ import { setLocale } from '@/app/actions/setLocale';
 const languages = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'mg', name: 'Malagasy', flag: '🇲🇬' },
 ];
 
 export default function LanguageSwitcher() {

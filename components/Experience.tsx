@@ -2,29 +2,28 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function Experience() {
+  const t = useTranslations('experience');
   const experiences = [
     {
-      role: 'Fullstack Developer',
-      company: 'Vowen (Freelance)',
-      period: 'September 2025 - Present',
-      description:
-        'Development of fullstack web applications. Frontend with Next.js (React), Backend with NestJS (REST API). API integration, data management and business logic. Collaboration with designers and product teams.',
+      role: t('freelance.role'),
+      company: t('freelance.company'),
+      period: t('freelance.period'),
+      description: t('freelance.description'),
     },
     {
-      role: 'Fullstack Developer Intern',
-      company: 'HasinReziga',
-      period: 'July - September 2024',
-      description:
-        'Development of an online library platform. Created REST API with Spring Boot for managing users, books, and loans. Developed reactive user interface with React. Implemented communication between frontend and backend via API calls. Deployed with Docker.',
+      role: t('intern.role'),
+      company: t('intern.company'),
+      period: t('intern.period'),
+      description: t('intern.description'),
     },
     {
-      role: 'Student',
-      company: 'Université Adventiste Zurcher',
-      period: 'November 2022 - June 2025',
-      description:
-        "Bachelor's degree in Computer Science, Software Engineering and Information Systems. Learning software development, database design, algorithms, and modern web technologies.",
+      role: t('student.role'),
+      company: t('student.company'),
+      period: t('student.period'),
+      description: t('student.description'),
     },
   ];
 
@@ -46,7 +45,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold mb-4"
         >
-          Experience
+          {t('title')}
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -55,7 +54,7 @@ export default function Experience() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-400 mb-12 max-w-2xl"
         >
-          My professional journey and key milestones
+          {t('subtitle')}
         </motion.p>
 
         <div ref={containerRef} className="relative">
